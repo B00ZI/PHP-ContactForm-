@@ -102,7 +102,7 @@ if (isset($_SESSION["error"])) {
         <label for="email">Email:</label>
         <input type="text" id="email" name="email">
         <?php
-        echo $nameError ? "<p style='color : red'>$nameError</p>" : "";
+        echo $emailError ? "<p style='color : red'>$emailError</p>" : "";
         ?>
 
         <!-- <label for="subject">Subject:</label>
@@ -111,7 +111,7 @@ if (isset($_SESSION["error"])) {
         <label for="message">Message:</label>
         <textarea id="message" name="message"></textarea>
         <?php
-        echo $nameError ? "<p style='color : red'>$nameError</p>" : "";
+        echo $messageError ? "<p style='color : red'>$messageError</p>" : "";
         ?>
         <button type="submit">Send</button>
     </form>
@@ -120,5 +120,5 @@ if (isset($_SESSION["error"])) {
 </html>
 
 <?php
-
+ session_unset();
 ?>
