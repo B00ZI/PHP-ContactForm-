@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ddd;
+            text-align: center;
+            margin-bottom: 25px;
+        }
         body {
+            min-height: fit-content;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
+            padding: 40px;
+            background-color: #333;
         }
         form {
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
+            margin: auto;
+            width: 400px;
+            background: #ddd;
+            padding: 20px 30px;
+            border-radius: 8px;
+            border: #000 2px solid ;
+            
         }
         label {
             display: block;
@@ -25,16 +40,21 @@
             width: 100%;
             padding: 8px;
             margin-top: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             border-radius: 4px;
-            box-sizing: border-box;
+            background-color: #f1f1f1ff;
+            outline: none;
         }
         textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
         button {
-            background: #007bff;
+            width: 50%;
+            
+            margin-left: auto;
+
+            background: #333;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -43,14 +63,14 @@
             margin-top: 15px;
         }
         button:hover {
-            background: #0056b3;
+            background: #494e52ff;
         }
     </style>
 </head>
 <body>
-    <h1>Contact Us</h1>
+    <h1>Contact Me</h1>
     
-    <form method="POST">
+    <form method="POST" action="formHandler.php">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         
@@ -67,3 +87,7 @@
     </form>
 </body>
 </html>
+
+<?php
+
+?>
