@@ -13,8 +13,11 @@ repopulating the valid fields the user entered. -->
 
 
 <?php
+session_start() ;
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location:contact.php");
+    die;
 }
 
 
@@ -29,23 +32,23 @@ $error = [];
 
 
 if (empty($name)) {
-    $error["name"]= "plese enter a  name";
+    $error["name"] = "plese enter a  name";
 } else {
     $validName = htmlspecialchars($name);
 }
 
 
 if (empty($email)) {
-    $error["email"]= "plese enter a  email";
+    $error["email"] = "plese enter a  email";
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $error["email"]= "plese enter a valide  email";
+    $error["email"] = "plese enter a valide  email";
 } else {
     $validEmile = $email;
 }
 
 
 if (empty($message)) {
-    $error["message"]= "plese enter a  message";
+    $error["message"] = "plese enter a  message";
 } else {
     $validMessage = htmlspecialchars($message);
 }
@@ -55,10 +58,19 @@ if ($validName && $validEmile && $validMessage) {
     echo $validName;
     echo $validEmile;
     echo $validMessage;
+    $dataFile = fopen("datafile", "a");
+    fwrite(
+        $dataFile,
+            "------------" . PHP_EOL .
+            "user name: " . $validName . PHP_EOL .
+            "user email: " . $validEmile . PHP_EOL .
+            "user message: " . $validMessage . PHP_EOL
+    );
+    fclose($dataFile);
 } else {
-    foreach($error as $err){
-        echo $err . " <br>" ;
-    }
+   $_SESSION["error"] = $error;
+   header("Location:contact.php");
+     
 }
 
 
