@@ -72,16 +72,16 @@
     
     <form method="POST" action="formHandler.php">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" >
         
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email" >
         
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
+        <input type="text" id="subject" name="subject" >
         
         <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" ></textarea>
         
         <button type="submit">Send</button>
     </form>
