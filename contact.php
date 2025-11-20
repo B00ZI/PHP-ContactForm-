@@ -77,9 +77,9 @@
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" >
         
-        <label for="subject">Subject:</label>
+        <!-- <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject" >
-        
+         -->
         <label for="message">Message:</label>
         <textarea id="message" name="message" ></textarea>
         
