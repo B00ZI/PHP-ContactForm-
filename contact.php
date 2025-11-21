@@ -16,8 +16,15 @@ if (isset($_SESSION["error"])) {
     $oldMessage = $_SESSION["oldInput"][2];
 }
 
+if(isset($_SESSION["succes"])){
+require "succesPage.php" ; 
+
+}else{
 require "contactHeader.php";
 require "contactBody.php";
+}
+
+
 
 session_unset();
 ?>

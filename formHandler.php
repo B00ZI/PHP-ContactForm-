@@ -72,6 +72,11 @@ if ($validName && $validEmile && $validMessage) {
             "user message: " . $validMessage . PHP_EOL
     );
     fclose($dataFile);
+   $_SESSION["succes"] = true;
+   header("Location:contact.php");
+   die;
+
+
 } else {
    $_SESSION["error"] = $error;
    $_SESSION["oldInput"] = [$name , $email , $message];
