@@ -25,10 +25,17 @@ $name =  $_POST["name"];
 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 $message = $_POST["message"];
 
+
+
 $validName = null;
 $validEmile = null;
 $validMessage = null;
-$error = [];
+$error = [
+    "name"=>"" ,
+    "email"=>"" ,
+    "message"=>"" 
+
+];
 
 
 if (empty($name)) {
@@ -55,9 +62,7 @@ if (empty($message)) {
 
 
 if ($validName && $validEmile && $validMessage) {
-    echo $validName;
-    echo $validEmile;
-    echo $validMessage;
+ 
     $dataFile = fopen("datafile", "a");
     fwrite(
         $dataFile,
@@ -69,6 +74,7 @@ if ($validName && $validEmile && $validMessage) {
     fclose($dataFile);
 } else {
    $_SESSION["error"] = $error;
+   $_SESSION["oldInput"] = [$name , $email , $message];
    header("Location:contact.php");
      
 }
