@@ -13,7 +13,7 @@ try {
     $stmt = $pdo -> query("SELECT * FROM contacts");
     $all_contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo "status ok" ;
-    var_dump($all_contacts) ;
+    print_r($all_contacts) ;
 }catch(PDOException $e) {
    echo "error " ; 
 }
