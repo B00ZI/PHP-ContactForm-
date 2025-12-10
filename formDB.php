@@ -1,8 +1,8 @@
 <?php
 
-require "model.php" ;
-$model = new Model ; 
-$messages = $model->getData();
+require "controler.php" ;
+$controler = new Controler ; 
+$controler->index();
 
-require "view.php";
+
 ?>
