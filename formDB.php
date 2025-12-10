@@ -5,7 +5,7 @@ $password ="";
 $dbName ="form_data" ;
 // DSN string: driver (mysql), host, dbname, and character set
 
-$dsn = "mysql: host:$serverName; dbName=$dbName " ;
+$dsn = "mysql:host=$serverName;dbname=$dbName" ;
 try {
     $pdo = new PDO($dsn , $username , $password) ;
     $pdo ->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
